@@ -9,14 +9,14 @@ import {
   DropdownMenu,
 } from "@/components/ui/dropdown-menu";
 
-export default function Navbar() {
+const Navbar = () => {
   return (
     <header className="flex h-16 w-full items-center justify-between px-16 md:px-80 dark:bg-gray-950 dark:text-white">
-      <Link className="flex flex-1 items-center gap-2" href="#">
+      <Link className="flex flex-1 items-center gap-2" href="/">
         <div className="h-6 w-6">Blog33r</div>
       </Link>
       <nav className="items-center gap-6 flex flex-1 justify-center">
-        <Link className="text-sm font-medium hover:underline" href="#">
+        <Link className="text-sm font-medium hover:underline" href="/home">
           Home
         </Link>
         <Link className="text-sm font-medium hover:underline" href="#">
@@ -48,7 +48,7 @@ export default function Navbar() {
       </div>
     </header>
   );
-}
+};
 
 function LogOutIcon(props: any) {
   return (
@@ -111,3 +111,5 @@ function UserIcon(props: any) {
     </svg>
   );
 }
+
+export default Navbar;
