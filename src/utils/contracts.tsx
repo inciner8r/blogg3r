@@ -1,5 +1,3 @@
-"use client";
-
 import { createWalletClient, custom } from "viem";
 import { mainnet } from "viem/chains";
 

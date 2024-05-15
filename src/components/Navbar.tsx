@@ -22,6 +22,9 @@ const Navbar = () => {
         <Link className="text-sm font-medium hover:underline" href="#">
           Featured
         </Link>
+        <Link className="text-sm font-medium hover:underline" href="/new">
+          New
+        </Link>
       </nav>
       <div className="flex items-center gap-4 flex-1 justify-end">
         <w3m-button />

@@ -64,10 +64,9 @@ const blogPosts = [
 const Home = () => {
   return (
     <div className="px-24 py-12 flex flex-col justify-center items-center">
-      ok
       <Tabs
         defaultValue="blogs"
-        className="flex flex-col justify-center items-center p-8 w-full"
+        className="flex flex-col justify-center items-center w-full"
       >
         <TabsList className="w-full flex justify-evenly mb-8">
           <TabsTrigger value="blogs" className="flex-1">
