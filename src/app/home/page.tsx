@@ -1,67 +1,22 @@
+"use client";
 import BlogCard from "@/components/BlogCard";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
-const blogPosts = [
-  {
-    id: 1,
-    title: "Introduction to Next.js",
-    author: "John Doe",
-    content:
-      "Next.js is a React framework for building server-side rendered and statically generated web applications.",
-  },
-  {
-    id: 2,
-    title: "Getting Started with Tailwind CSS",
-    author: "Jane Smith",
-    content:
-      "Tailwind CSS is a utility-first CSS framework that helps you build modern web designs without having to write custom CSS.",
-  },
-  {
-    id: 3,
-    title: "State Management with Redux",
-    author: "Alex Johnson",
-    content:
-      "Redux is a predictable state container for JavaScript apps. It helps you manage application state in a predictable way.",
-  },
-  {
-    id: 3,
-    title: "State Management with Redux",
-    author: "Alex Johnson",
-    content:
-      "Redux is a predictable state container for JavaScript apps. It helps you manage application state in a predictable way.",
-  },
-  {
-    id: 3,
-    title: "State Management with Redux",
-    author: "Alex Johnson",
-    content:
-      "Redux is a predictable state container for JavaScript apps. It helps you manage application state in a predictable way.",
-  },
-  {
-    id: 3,
-    title: "State Management with Redux",
-    author: "Alex Johnson",
-    content:
-      "Redux is a predictable state container for JavaScript apps. It helps you manage application state in a predictable way.",
-  },
-  {
-    id: 3,
-    title: "State Management with Redux",
-    author: "Alex Johnson",
-    content:
-      "Redux is a predictable state container for JavaScript apps. It helps you manage application state in a predictable way.",
-  },
-  {
-    id: 3,
-    title: "State Management with Redux",
-    author: "Alex Johnson",
-    content:
-      "Redux is a predictable state container for JavaScript apps. It helps you manage application state in a predictable way.",
-  },
-];
+import { FetchAllBlogs, publicClient, walletClient } from "@/lib/client";
+import { getContract } from "viem";
+import { abi } from "@/abi/abi";
+import { BlogPost } from "@/types/types";
 
 const Home = () => {
+  const [BlogPosts, setBlogPosts] = useState<readonly BlogPost[]>([]);
+  const loadBlogs = async () => {
+    const result = await FetchAllBlogs();
+    setBlogPosts(result);
+  };
+  useEffect(() => {
+    loadBlogs();
+  }, []);
+
   return (
     <div className="px-24 py-12 flex flex-col justify-center items-center">
       <Tabs
@@ -77,9 +32,9 @@ const Home = () => {
           </TabsTrigger>
         </TabsList>
         <TabsContent value="blogs">
-          <div className="flex gap-8 flex-wrap justify-evenly">
-            {blogPosts.map((post) => (
-              <BlogCard key={post.id} />
+          <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {BlogPosts.map((post) => (
+              <BlogCard key={post.id.toString()} blog={post} />
             ))}
           </div>
         </TabsContent>
