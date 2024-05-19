@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 interface BlogCardProps {
   blog: BlogPost;
 }
+
 const formatAddress = (address: string) => {
   if (address.length > 10) {
     return `${address.slice(0, 6)}...${address.slice(-4)}`;

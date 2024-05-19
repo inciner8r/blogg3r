@@ -2,7 +2,7 @@
 import BlogCard from "@/components/BlogCard";
 import React, { useEffect, useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { FetchAllBlogs, publicClient } from "@/lib/client";
+import { FetchAllBlogs } from "@/lib/client";
 import { BlogPost } from "@/types/types";
 
 const Home = () => {
@@ -13,12 +13,13 @@ const Home = () => {
       setBlogPosts(result);
     }
   };
+
   useEffect(() => {
     loadBlogs();
   }, []);
 
   return (
-    <div className="px-24 py-12 flex flex-col justify-center items-center">
+    <div className="px-4 py-12 md:px-12 lg:px-24 flex flex-col justify-center items-center">
       <Tabs
         defaultValue="blogs"
         className="flex flex-col justify-center items-center w-full"
@@ -32,7 +33,7 @@ const Home = () => {
           </TabsTrigger>
         </TabsList>
         <TabsContent value="blogs">
-          <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {BlogPosts.map((post) => (
               <BlogCard key={post.id.toString()} blog={post} />
             ))}
