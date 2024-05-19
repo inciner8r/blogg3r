@@ -2,6 +2,7 @@
 import { FC } from "react";
 import { BlogPost } from "@/types/types";
 import { CardTitle, CardHeader, CardContent, Card } from "@/components/ui/card";
+import parse from "html-react-parser";
 
 interface BlogCardProps {
   blog: BlogPost;
@@ -40,7 +41,9 @@ const BlogCard: FC<BlogCardProps> = ({ blog }) => {
         </div>
       </CardHeader>
       <CardContent>
-        <p className="text-sm leading-relaxed line-clamp-[7]">{blog.content}</p>
+        <p className="text-sm leading-relaxed line-clamp-[7]">
+          {parse(blog.content)}
+        </p>
       </CardContent>
     </Card>
   );
