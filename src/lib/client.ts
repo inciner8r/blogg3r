@@ -24,6 +24,5 @@ export async function FetchAllBlogs() {
         client: { public: publicClient },
     });
     const result = await contract.read.viewAllPosts();
-    console.log(result);
     return result
 }

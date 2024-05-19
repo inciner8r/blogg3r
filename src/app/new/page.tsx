@@ -33,10 +33,12 @@ const Page = () => {
       account: acc,
     });
   }
-
+  function handleContentChange(content: string) {
+    setContent(content);
+  }
   return (
     <div className="px-24 py-12 flex flex-col justify-center items-center">
-      <Card className="w-full max-w-2xl">
+      <Card className="w-full">
         <CardHeader>
           <CardTitle>Create New Blog Post</CardTitle>
           <CardDescription>
@@ -55,7 +57,12 @@ const Page = () => {
           </div>
           <div className="space-y-2">
             <Label htmlFor="content">Content</Label>
-            <Editor content={content} onContentChange={setContent} />
+            <Editor
+              content={""}
+              onContentChange={(newContent: string) => {
+                handleContentChange(newContent);
+              }}
+            />
           </div>
         </CardContent>
         <CardFooter className="flex justify-end">

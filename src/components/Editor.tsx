@@ -8,12 +8,13 @@ interface EditorProps {
 }
 
 const Editor: React.FC<EditorProps> = ({ content, onContentChange }) => {
+  const handleChange = (newCnt: any) => {
+    onContentChange(newCnt);
+  };
   const editor = useEditor({
     extensions: [StarterKit],
-    content: content,
     onUpdate: ({ editor }) => {
-      const html = editor.getHTML();
-      onContentChange(html);
+      handleChange(editor.getHTML());
     },
   });
 
