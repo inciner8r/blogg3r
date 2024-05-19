@@ -9,13 +9,17 @@ export const publicClient = createPublicClient({
     chain: polygonAmoy,
     transport: http()
 })
+export function WalletClientCreate(eth: any) {
+    const walletClient = createWalletClient({
+        chain: polygonAmoy,
+        transport: custom(eth)
+    })
+    return walletClient
+}
 
-export const walletClient = createWalletClient({
-    chain: polygonAmoy,
-    transport: custom(window.ethereum)
-})
 
-export async function FetchAllBlogs() {
+export async function FetchAllBlogs(ethProvider: any) {
+    const walletClient = WalletClientCreate(ethProvider)
     const accounts = await walletClient.getAddresses();
     const acc = accounts[0];
     const contract = getContract({

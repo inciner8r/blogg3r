@@ -2,7 +2,7 @@
 import BlogCard from "@/components/BlogCard";
 import React, { useEffect, useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { FetchAllBlogs, publicClient, walletClient } from "@/lib/client";
+import { FetchAllBlogs, publicClient } from "@/lib/client";
 import { getContract } from "viem";
 import { abi } from "@/abi/abi";
 import { BlogPost } from "@/types/types";
@@ -10,8 +10,10 @@ import { BlogPost } from "@/types/types";
 const Home = () => {
   const [BlogPosts, setBlogPosts] = useState<readonly BlogPost[]>([]);
   const loadBlogs = async () => {
-    const result = await FetchAllBlogs();
-    setBlogPosts(result);
+    if (typeof window !== "undefined") {
+      const result = await FetchAllBlogs(window.ethereum);
+      setBlogPosts(result);
+    }
   };
   useEffect(() => {
     loadBlogs();
