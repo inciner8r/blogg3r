@@ -11,7 +11,7 @@ import {
 
 const Navbar = () => {
   return (
-    <header className="flex h-16 w-full items-center justify-between px-16 md:px-80 dark:bg-gray-950 dark:text-white">
+    <header className="flex h-16 w-full items-center justify-between sm:px-0 lg:px-20 xl:px-80 dark:bg-gray-950 dark:text-white">
       <Link className="flex flex-1 items-center gap-2" href="/">
         <div className="h-6 w-6">Blog33r</div>
       </Link>
