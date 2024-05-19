@@ -21,6 +21,7 @@
     "@tiptap/extension-heading": "^2.4.0",
     "@tiptap/extension-highlight": "^2.4.0",
     "@tiptap/extension-link": "^2.4.0",
+    "@tiptap/extension-list-item": "^2.4.0",
     "@tiptap/extension-placeholder": "^2.4.0",
     "@tiptap/extension-subscript": "^2.4.0",
     "@tiptap/extension-superscript": "^2.4.0",
