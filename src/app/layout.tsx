@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { headers } from "next/headers";
-
 import { cookieToInitialState } from "wagmi";
 
 import { config } from "@/config";
@@ -27,7 +26,6 @@ export default function RootLayout({
       <body className={`${inter.className} dark:bg-gray-950 dark:text-white`}>
         <Web3ModalProvider initialState={initialState}>
           <Navbar />
-          {children}
         </Web3ModalProvider>
       </body>
     </html>

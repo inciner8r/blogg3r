@@ -1,0 +1,101 @@
+.tiptap, .preview-content {
+    > * + * {
+      margin-top: 0.75em;
+    }
+  
+    ul,
+    ol {
+      padding: 0 1rem;
+    }
+  
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      line-height: 1.1;
+    }
+  
+    /* Bold text */
+    strong {
+      font-weight: bold;
+    }
+  
+    /* Italic text */
+    em {
+      font-style: italic;
+    }
+  
+    /* Strikethrough text */
+    s {
+      text-decoration: line-through;
+    }
+  
+    /* Highlighted text */
+    mark {
+      background-color: yellow;
+    }
+  
+    /* Inline code */
+    code {
+      background-color: rgba(97, 97, 97, 0.1); /* Using RGB since SCSS variables aren't used in vanilla CSS */
+      color: #616161;
+      padding: 0.2em 0.4em;
+      border-radius: 0.3em;
+    }
+  
+    /* Code block */
+    pre {
+      background: #0D0D0D;
+      color: #FFF;
+      font-family: 'JetBrainsMono', monospace;
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+    }
+  
+    pre code {
+      color: inherit;
+      padding: 0;
+      background: none;
+      font-size: 0.8rem;
+    }
+  
+    /* Images */
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  
+    /* Blockquotes */
+    blockquote {
+      padding-left: 1rem;
+      border-left: 2px solid rgba(13, 13, 13, 0.1);
+      font-style: italic;
+      color: #555;
+    }
+  
+    /* Horizontal rules */
+    hr {
+      border: none;
+      border-top: 2px solid rgba(13, 13, 13, 0.1);
+      margin: 2rem 0;
+    }
+  
+    /* Text alignment */
+    .text-left {
+      text-align: left;
+    }
+  
+    .text-center {
+      text-align: center;
+    }
+  
+    .text-right {
+      text-align: right;
+    }
+  
+    .text-justify {
+      text-align: justify;
+    }
+  }

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import "@mantine/tiptap/styles.css";
 
 export default function Home() {
   return (
