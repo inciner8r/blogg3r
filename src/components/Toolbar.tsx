@@ -18,8 +18,6 @@ import {
   FaSun,
   FaMoon,
 } from "react-icons/fa";
-import Highlight from "@tiptap/extension-highlight";
-import TextAlign from "@tiptap/extension-text-align";
 
 interface ToolbarProps {
   editor: Editor | null;

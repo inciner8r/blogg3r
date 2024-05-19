@@ -26,6 +26,7 @@ export default function RootLayout({
       <body className={`${inter.className} dark:bg-gray-950 dark:text-white`}>
         <Web3ModalProvider initialState={initialState}>
           <Navbar />
+          {children}
         </Web3ModalProvider>
       </body>
     </html>
