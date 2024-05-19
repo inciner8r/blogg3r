@@ -3,9 +3,11 @@ import { FC } from "react";
 import { BlogPost } from "@/types/types";
 import { CardTitle, CardHeader, CardContent, Card } from "@/components/ui/card";
 import parse from "html-react-parser";
+import { Button } from "@/components/ui/button";
 
 interface BlogCardProps {
   blog: BlogPost;
+  DeleteBlog: (id: bigint) => void;
 }
 const formatAddress = (address: string) => {
   if (address.length > 10) {
@@ -14,7 +16,7 @@ const formatAddress = (address: string) => {
   return address;
 };
 
-const BlogCard: FC<BlogCardProps> = ({ blog }) => {
+const BlogCard: FC<BlogCardProps> = ({ blog, DeleteBlog }) => {
   return (
     <Card className="w-full dark:bg-gray-800 dark:text-gray-50">
       <CardHeader>
@@ -44,6 +46,15 @@ const BlogCard: FC<BlogCardProps> = ({ blog }) => {
         <p className="text-sm leading-relaxed line-clamp-[7]">
           {parse(blog.content)}
         </p>
+        <Button
+          onClick={() => {
+            DeleteBlog(blog.id);
+          }}
+          variant="destructive"
+          className="mt-4"
+        >
+          Delete
+        </Button>
       </CardContent>
     </Card>
   );

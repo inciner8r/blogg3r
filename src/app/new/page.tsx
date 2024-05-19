@@ -12,30 +12,13 @@ import {
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { createWalletClient, getContract } from "viem";
-import { publicClient, WalletClientCreate } from "@/lib/client";
-import { abi } from "@/abi/abi";
+import { NewBlog, publicClient, WalletClientCreate } from "@/lib/client";
 import Editor from "@/components/Editor";
 
 const Page = () => {
   const [title, setTitle] = useState<string>("");
   const [content, setContent] = useState<string>("");
 
-  async function callContract() {
-    if (typeof window !== "undefined") {
-      const walletClient = WalletClientCreate(window.ethereum);
-      const accounts = await walletClient.getAddresses();
-      const acc = accounts[0];
-      const contract = getContract({
-        address: process.env.NEXT_PUBLIC_CONTRACT_ADDRESS as `0x${string}`,
-        abi: abi,
-        client: { public: publicClient, wallet: walletClient },
-      });
-      const result = contract.write.createPost([title, content], {
-        account: acc,
-      });
-    }
-  }
   function handleContentChange(content: string) {
     setContent(content);
   }
@@ -71,7 +54,7 @@ const Page = () => {
         <CardFooter className="flex justify-end">
           <Button
             onClick={() => {
-              callContract();
+              NewBlog(window.ethereum, title, content);
             }}
           >
             Publish Post
