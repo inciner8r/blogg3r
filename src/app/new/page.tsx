@@ -22,6 +22,8 @@ const Page = () => {
   function handleContentChange(content: string) {
     setContent(content);
   }
+
+  function handleSubmit() {}
   return (
     <div className="px-24 py-12 flex flex-col justify-center items-center">
       <Card className="w-full">

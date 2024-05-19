@@ -1,13 +1,7 @@
 import { BlogPost } from "@/types/types";
 
 // Function to shuffle an array
-function shuffleArray(array: readonly {
-    id: bigint;
-    author: `0x${string}`;
-    title: string;
-    content: string;
-    isDeleted: boolean;
-}[]): BlogPost[] {
+function shuffleArray(array: BlogPost[]): BlogPost[] {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
@@ -16,13 +10,7 @@ function shuffleArray(array: readonly {
 }
 
 // Function to pick random 6 blog posts
-export function pickRandomSixBlogPosts(blogPosts: readonly {
-    id: bigint;
-    author: `0x${string}`;
-    title: string;
-    content: string;
-    isDeleted: boolean;
-}[]): BlogPost[] {
+export function pickRandomSixBlogPosts(blogPosts: BlogPost[]): BlogPost[] {
     // Shuffle the blog posts
     const shuffledBlogPosts = shuffleArray(blogPosts);
 

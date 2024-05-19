@@ -3,8 +3,6 @@ import BlogCard from "@/components/BlogCard";
 import React, { useEffect, useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { FetchAllBlogs, publicClient } from "@/lib/client";
-import { getContract } from "viem";
-import { abi } from "@/abi/abi";
 import { BlogPost } from "@/types/types";
 
 const Home = () => {
