@@ -34,6 +34,7 @@
     "@web3modal/wagmi": "^4.2.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "embla-carousel-react": "^8.1.1",
     "encoding": "^0.1.13",
     "html-react-parser": "^5.1.10",
     "lucide-react": "^0.378.0",

@@ -11,16 +11,13 @@ import {
 
 const Navbar = () => {
   return (
-    <header className="flex h-16 w-full items-center justify-between sm:px-0 lg:px-20 xl:px-80 dark:bg-gray-950 dark:text-white">
+    <header className="flex h-16 w-full items-center justify-between sm:px-0 lg:px-20 xl:px-48 dark:bg-gray-950 dark:text-white">
       <Link className="flex flex-1 items-center gap-2" href="/">
-        <div className="h-6 w-6">Blog33r</div>
+        <div className="h-6 w-6 text-xl font-bold">Blogg3r</div>
       </Link>
       <nav className="items-center gap-6 flex flex-1 justify-center">
         <Link className="text-sm font-medium hover:underline" href="/home">
           Home
-        </Link>
-        <Link className="text-sm font-medium hover:underline" href="#">
-          Featured
         </Link>
         <Link className="text-sm font-medium hover:underline" href="/new">
           New

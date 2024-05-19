@@ -3,6 +3,7 @@ import { FC } from "react";
 import { BlogPost } from "@/types/types";
 import { CardTitle, CardHeader, CardContent, Card } from "@/components/ui/card";
 import parse from "html-react-parser";
+import { useRouter } from "next/navigation";
 
 interface BlogCardProps {
   blog: BlogPost;
@@ -15,10 +16,16 @@ const formatAddress = (address: string) => {
 };
 
 const BlogCard: FC<BlogCardProps> = ({ blog }) => {
+  const router = useRouter();
   return (
     <Card className="w-full dark:bg-gray-800 dark:text-gray-50">
       <CardHeader>
-        <CardTitle className="mb-2 line-clamp-1">{blog.title}</CardTitle>
+        <CardTitle
+          className="mb-2 line-clamp-1 hover:cursor-pointer hover:underline"
+          onClick={() => router.push(`/blog/${blog.id}`)}
+        >
+          {blog.title}
+        </CardTitle>
         <div className="flex items-center justify-between space-x-2 text-sm text-gray-500 dark:text-gray-400">
           <div className="flex items-center space-x-1">
             <img

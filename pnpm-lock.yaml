@@ -83,6 +83,9 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      embla-carousel-react:
+        specifier: ^8.1.1
+        version: 8.1.1(react@18.3.1)
       encoding:
         specifier: ^0.1.13
         version: 0.1.13
@@ -2964,6 +2967,19 @@ packages:
 
   elliptic@6.5.5:
     resolution: {integrity: sha512-7EjbcmUm17NQFu4Pmgmq2olYMj8nwMnpcddByChSUjArp8F5DQWcIcpriwO4ZToLNAJig0yiyjswfyGNje/ixw==}
+
+  embla-carousel-react@8.1.1:
+    resolution: {integrity: sha512-VuIrNyGneFKlDzAvkRGeXjEOw+FW2Ob76R/Y+kdSuKj68bnaAJCEf8PlHtJJWle1/rR/Sfv9NTIa00zlA8iXgw==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.1 || ^18.0.0
+
+  embla-carousel-reactive-utils@8.1.1:
+    resolution: {integrity: sha512-zlsaorYN56qtoXoVNw8hA/IbUjxq0pdggZpl9b5V2Cxvrd47ZSL5Lat7GgC+kgyUEdEocP1iOmw5+vpCX9rZPA==}
+    peerDependencies:
+      embla-carousel: 8.1.1
+
+  embla-carousel@8.1.1:
+    resolution: {integrity: sha512-PfdhNbPoNl7V5YnwuKe2zmKd0+/HY+Q4O59xQcVvinsgv2LkpAVQ1NB/q5STqAde8nZ56U2uQOe6X+9u4IZlhA==}
 
   emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
@@ -9689,6 +9705,18 @@ snapshots:
       inherits: 2.0.4
       minimalistic-assert: 1.0.1
       minimalistic-crypto-utils: 1.0.1
+
+  embla-carousel-react@8.1.1(react@18.3.1):
+    dependencies:
+      embla-carousel: 8.1.1
+      embla-carousel-reactive-utils: 8.1.1(embla-carousel@8.1.1)
+      react: 18.3.1
+
+  embla-carousel-reactive-utils@8.1.1(embla-carousel@8.1.1):
+    dependencies:
+      embla-carousel: 8.1.1
+
+  embla-carousel@8.1.1: {}
 
   emoji-regex@8.0.0: {}
 

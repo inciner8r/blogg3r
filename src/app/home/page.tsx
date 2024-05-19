@@ -27,10 +27,10 @@ const Home = () => {
       >
         <TabsList className="w-full flex justify-evenly mb-8">
           <TabsTrigger value="blogs" className="flex-1">
-            Blogs
+            Discover
           </TabsTrigger>
           <TabsTrigger value="password" className="flex-1">
-            Password
+            Following
           </TabsTrigger>
         </TabsList>
         <TabsContent value="blogs">
@@ -40,7 +40,9 @@ const Home = () => {
             ))}
           </div>
         </TabsContent>
-        <TabsContent value="password">Change your password here.</TabsContent>
+        <TabsContent value="password">
+          Blogs from accounts you follow.
+        </TabsContent>
       </Tabs>
     </div>
   );

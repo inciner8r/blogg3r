@@ -23,7 +23,9 @@ export default function RootLayout({
   const initialState = cookieToInitialState(config, headers().get("cookie"));
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.className} dark:bg-gray-950 dark:text-white`}>
+      <body
+        className={`${inter.className} dark:bg-gray-950 dark:text-white min-h-screen scrollbar`}
+      >
         <Web3ModalProvider initialState={initialState}>
           <Navbar />
           {children}
